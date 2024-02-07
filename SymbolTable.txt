@@ -1,0 +1,72 @@
+___________________________________________________________________________
+|		Lexemes			|		Tokens		  |
+|-------------------------------------------------------------------------|
+|		+					ADD_OP		  |
+|		-					SUB_OP		  |
+|		*					MUL_OP		  |
+|		/					DIV_OP		  |
+|		%					P_OP		  |
+|							INVALID		  |
+|							INVALID		  |
+|		!					NOT_OP		  |
+|							INVALID		  |
+|		!					NOT_OP		  |
+|		>					GRTR_OP		  |
+|		<					LESS_OP		  |
+|		>					GRTR_OP		  |
+|		<					LESS_OP		  |
+|		// This is a single line comment					SINGLE_COMM		  |
+|		/* This is a multi line comment */					MULTI_COMM		  |
+|		Let					DEC_KW		  |
+|		Grade					IDENT		  |
+|		Let					DEC_KW		  |
+|		Grade					IDENT		  |
+|		:					DEL_DT		  |
+|		Mon					IDENT		  |
+|		remember					REM_KW		  |
+|		shorten					SHORTEN_KW		  |
+|		it					POINT_KW		  |
+|		was					POINT_KW		  |
+|		"String asldk asdaksjdas"					STR_LIT		  |
+|		's'					CHAR_LIT		  |
+|		1234					INT_LIT		  |
+|		A					NOISE_W		  |
+|		Score					IDENT		  |
+|		could					DT_KW		  |
+|		only					DT_KW		  |
+|		be					DT_KW		  |
+|		from					PREP_KW		  |
+|		1					INT_LIT		  |
+|		to					PREP_KW		  |
+|		100					INT_LIT		  |
+|		A					NOISE_W		  |
+|		Grade					IDENT		  |
+|		could					DT_KW		  |
+|		only					DT_KW		  |
+|		be					DT_KW		  |
+|		"Very Good"					STR_LIT		  |
+|		,					DEL_ITEMS		  |
+|		"Good"					STR_LIT		  |
+|		,					DEL_ITEMS		  |
+|		"Average"					STR_LIT		  |
+|		,					DEL_ITEMS		  |
+|		"Pass"					STR_LIT		  |
+|		,					DEL_ITEMS		  |
+|		"Fail"					STR_LIT		  |
+|		A					NOISE_W		  |
+|		Gender					IDENT		  |
+|		could					DT_KW		  |
+|		only					DT_KW		  |
+|		be					DT_KW		  |
+|		"Female"					STR_LIT		  |
+|		,					DEL_ITEMS		  |
+|		"Male"					STR_LIT		  |
+|		Let					DEC_KW		  |
+|		Score					IDENT		  |
+|		:					DEL_DT		  |
+|		Math					IDENT		  |
+|		be					DT_KW		  |
+|		101					INT_LIT		  |
+|		Show					ACTION_KW		  |
+|		Math					IDENT		  |
+|_________________________________________________________________________|

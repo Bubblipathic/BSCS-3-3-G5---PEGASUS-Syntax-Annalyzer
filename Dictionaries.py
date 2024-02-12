@@ -20,7 +20,7 @@ OPERATORS = {
 
 
 
-RESERVEDORKEY_WORDS = {
+RESERVE_WORDS = {
     'It': 'POINT_KW',
     'it': 'POINT_KW',
     'Each': 'POINT_KW',
@@ -69,20 +69,18 @@ RESERVEDORKEY_WORDS = {
     'to': 'PREP_KW',
     'In': 'PREP_KW',
     'in': 'PREP_KW',
-    'Of': 'RELATE_KW',
-    'of': 'RELATE_KW',
-    'Is': 'RELATE_KW',
-    'is': 'RELATE_KW',
-    'Let': 'DEC_KW',
-    'let': 'DEC_KW',
-    'Be': 'DEC_KW',
-    'be': 'DEC_KW',
-    'Could': 'DT_KW',
-    'could': 'DT_KW',
-    'Only': 'DT_KW',
-    'only': 'DT_KW',
-    'Be': 'DT_KW',
-    'be': 'DT_KW'
+    'Of': 'REL_OF',
+    'of': 'REL_OF',
+    'Is': 'REL_IS',
+    'is': 'REL_IS',
+    'Let': 'LET_KW',
+    'let': 'LET_KW',
+    'Could': 'COULD_KW',
+    'could': 'COULD_KW',
+    'Only': 'ONLY_KW',
+    'only': 'ONLY_KW',
+    'Be': 'BE_KW',
+    'be': 'BE_KW'
 }
 
 NOISE_WORDS = {

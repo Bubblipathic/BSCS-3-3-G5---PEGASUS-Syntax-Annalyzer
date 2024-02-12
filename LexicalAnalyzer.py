@@ -1,7 +1,8 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, font
-from Dictionaries import OPERATORS, SPECIAL_SYMBOLS,RESERVEDORKEY_WORDS, NOISE_WORDS
+from Dictionaries import OPERATORS, SPECIAL_SYMBOLS,RESERVE_WORDS, NOISE_WORDS
 from Evaluation import contains_alphabet, contains_num, lexeme
+from Grammar import *
 
 
 def analyze_file(file_path):
@@ -9,7 +10,7 @@ def analyze_file(file_path):
         tempstring = ''
         lexemes = []
         SynTokens = []
-        line_number = 1  # Initialize line number
+        line_number = 0  # Initialize line number
         
         # Read the chosen file
         with open(file_path, 'r') as content:
@@ -21,16 +22,17 @@ def analyze_file(file_path):
                 
                 # Scan the file by line
                 for line in content:
+                    line_number +=1
                     # Scan the line by character
                     for char in line:
                         # Check if the character is alphabet
                         if char == ' ':
-                            # Check for comments and strings
-                            if '//' in tempstring or '/*' in tempstring or '"' in tempstring or "'" in tempstring:
+                            if '//' in tempstring or '/*' in tempstring:
+                                tempstring += char 
+                            elif '"' in tempstring:
                                 tempstring += char
-                            elif tempstring in RESERVEDORKEY_WORDS or NOISE_WORDS:
-                                lexemes.append((tempstring, line_number))  # Append lexeme with line number
-                                tempstring = ''
+                            elif "'" in tempstring:
+                                tempstring += char
                             elif tempstring == '':
                                 continue
                         elif char.isalpha():
@@ -72,8 +74,11 @@ def analyze_file(file_path):
                                 tempstring += char
                         # Checks if the character is part of the operators
                         elif char in OPERATORS:
-                            # Handle various cases of operators
-                            if tempstring == '':
+                            if (lexemes and ('"' in lexemes[-1] or "'" in lexemes[-1])) and char == '+':
+                                tempstring = char + 'c'
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '':
                                 tempstring += char
                             elif tempstring == '-' and char == '-':
                                 tempstring += char
@@ -81,21 +86,89 @@ def analyze_file(file_path):
                                 tempstring += char
                                 lexemes.append((tempstring, line_number))
                                 tempstring = ''
-                            # Add more conditions for other operators...
+                            elif tempstring == '--' and char == '-':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '/' and char == '/':
+                                tempstring += char
+                            elif tempstring == '/' and char == '*':
+                                tempstring += char
+                            elif '/*' in tempstring and (char == '*' or char == '/'):
+                                tempstring += char
+                            elif tempstring.endswith('*/'):
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                                tempstring += char
+                            elif tempstring.startswith('//') or tempstring.startswith('/*'):
+                                tempstring+= char
+                            elif tempstring == '>' and char == '>':
+                                tempstring += char
+                            elif tempstring == '>' and char == '=':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '>>' and char == '>':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '+' and (char == '+' or char == '='):
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '<' and char == '=':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '#' and char == '>':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '!' and char == '=':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '~' and char == '=':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '%' and char == '=':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '/' and char == '=':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '=' and char == '=':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '|' and char == '|':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '&' and char == '&':
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
+                            elif tempstring == '*' and (char == '*' or char == '='):
+                                tempstring += char
+                                lexemes.append((tempstring, line_number))
+                                tempstring = ''
                             else:
                                 lexemes.append((tempstring, line_number))
                                 tempstring = ''
                                 tempstring += char
                         # Checks if the character is a digit
                         elif char.isdigit():
-                            # Handle digit cases
                             if tempstring == '' or tempstring.isdigit() or tempstring.isalpha():
                                 tempstring += char
                             elif '.' in tempstring and contains_num(tempstring):
                                 tempstring += char
                             elif tempstring.isalnum():
                                 tempstring += char
-                            # Handle negation vs. minus operator
+                            # Checks if the '-' is a negation or minus operator
                             elif tempstring == '-':
                                 tempstring += 'n'
                                 lexemes.append((tempstring, line_number))
@@ -106,10 +179,7 @@ def analyze_file(file_path):
                                 tempstring = ''
                                 tempstring += char
 
-                    # Increment line number after processing each line
-                    line_number += 1
-
-                    # Checks if the tempstring is a multi-line comment
+                    # Checks if the tempstring is a multi line comment
                     if tempstring.endswith('*/'):
                         lexemes.append((tempstring, line_number))
                         tempstring = ''
@@ -120,10 +190,11 @@ def analyze_file(file_path):
                     elif tempstring != '':
                         lexemes.append((tempstring, line_number))
                         tempstring = ''
-
-                # Empties the remaining string and appends it to the lexeme list
-                if tempstring.strip() != '':
-                    lexemes.append((tempstring.strip(), line_number))
+                
+                # Empties the remaining string and append it to the lexeme list
+                if tempstring != '':
+                        lexemes.append((tempstring, line_number))
+                        tempstring = ''
 
                 # Analyze every lexeme in the lexemes list
                 for token, line_num in lexemes:
@@ -136,14 +207,14 @@ def analyze_file(file_path):
 
                 output.write('|_________________________________________________________________________|\n')
 
-                    
-                for SynToken, SynLine in SynTokens:
-                    output.write(str(SynToken) + '\n')  # Write each item to the output file
+                parser = Parser()
+                parser.parseSymbolTable(SynTokens)
+
+
 
 
     except FileNotFoundError:
         print("File not found!!")
-
 
 def show_symbol_table():
     try:

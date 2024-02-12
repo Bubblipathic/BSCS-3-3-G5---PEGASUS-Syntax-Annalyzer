@@ -1,166 +1,38 @@
 __________________________________________________________________________
 | Lexemes                        | Tokens               | Line Number     |
 |_________________________________________________________________________|
-| +                              | ADD_OP               | 1               |
-| -                              | SUB_OP               | 1               |
-| *                              | MUL_OP               | 1               |
-| /                              | DIV_OP               | 1               |
-| %                              | P_OP                 | 1               |
-| !                              | NOT_OP               | 2               |
-| !                              | NOT_OP               | 2               |
-| >                              | GRTR_OP              | 2               |
-| <                              | LESS_OP              | 2               |
-| >                              | GRTR_OP              | 2               |
-| <                              | LESS_OP              | 3               |
-| /                              | DIV_OP               | 4               |
-| /                              | DIV_OP               | 4               |
-| This                           | POINT_KW             | 4               |
-| is                             | RELATE_KW            | 4               |
-| a                              | NOISE_W              | 4               |
-| single                         | IDENT                | 4               |
-| line                           | IDENT                | 4               |
-| comment                        | IDENT                | 5               |
-| /                              | DIV_OP               | 5               |
-| *                              | MUL_OP               | 5               |
-| This                           | POINT_KW             | 5               |
-| is                             | RELATE_KW            | 6               |
-| a                              | NOISE_W              | 7               |
-| multi                          | IDENT                | 8               |
-| line                           | IDENT                | 9               |
-| comment                        | IDENT                | 10              |
-| *                              | MUL_OP               | 10              |
-| /                              | DIV_OP               | 11              |
-| Let                            | DEC_KW               | 12              |
-| Grade                          | IDENT                | 13              |
-| Let                            | DEC_KW               | 13              |
-| Grade                          | IDENT                | 13              |
-| :                              | DEL_DT               | 13              |
-| Mon                            | IDENT                | 13              |
-| remember                       | REM_KW               | 14              |
-| shorten                        | SHORTEN_KW           | 14              |
-| it                             | POINT_KW             | 14              |
-| was                            | POINT_KW             | 15              |
-| "String asldk asdaksjdas"      | STR_LIT              | 16              |
-| 's'                            | CHAR_LIT             | 17              |
-| 1234                           | INT_LIT              | 19              |
-| A                              | NOISE_W              | 20              |
-| Score                          | IDENT                | 20              |
-| could                          | DT_KW                | 20              |
-| only                           | DT_KW                | 20              |
-| be                             | DT_KW                | 20              |
-| from                           | PREP_KW              | 20              |
-| 1                              | INT_LIT              | 20              |
-| to                             | PREP_KW              | 20              |
-| 100                            | INT_LIT              | 20              |
-| A                              | NOISE_W              | 21              |
-| Grade                          | IDENT                | 21              |
-| could                          | DT_KW                | 21              |
-| only                           | DT_KW                | 21              |
-| be                             | DT_KW                | 21              |
-| "Very Good"                    | STR_LIT              | 21              |
-| ,                              | DEL_ITEMS            | 21              |
-| "Good"                         | STR_LIT              | 21              |
-| ,                              | DEL_ITEMS            | 21              |
-| "Average"                      | STR_LIT              | 21              |
-| ,                              | DEL_ITEMS            | 21              |
-| "Pass"                         | STR_LIT              | 21              |
-| ,                              | DEL_ITEMS            | 21              |
-| "Fail"                         | STR_LIT              | 21              |
-| A                              | NOISE_W              | 22              |
-| Gender                         | IDENT                | 22              |
-| could                          | DT_KW                | 22              |
-| only                           | DT_KW                | 22              |
-| be                             | DT_KW                | 22              |
-| "Female"                       | STR_LIT              | 22              |
-| ,                              | DEL_ITEMS            | 22              |
-| "Male"                         | STR_LIT              | 22              |
-| Let                            | DEC_KW               | 24              |
-| Score                          | IDENT                | 24              |
-| :                              | DEL_DT               | 24              |
+| // This is a single line comment | SINGLE_COMM          | 2               |
+| /* This is a multi line comment */ | MULTI_COMM           | 8               |
+| Let                            | LET_KW               | 9               |
+| Grade                          | IDENT                | 10              |
+| LetGrade                       | IDENT                | 11              |
+| :                              | DEL_DT               | 11              |
+| Mon                            | IDENT                | 11              |
+| remembershortenitwas           | IDENT                | 12              |
+| "String asldk asdaksjdas"      | STR_LIT              | 14              |
+| 's'                            | CHAR_LIT             | 15              |
+| 1                              | INT_LIT              | 16              |
+| +                              | ADD_OP               | 16              |
+| 1                              | INT_LIT              | 16              |
+| AScorecouldonlybefrom1         | IDENT                | 18              |
+| to100                          | IDENT                | 18              |
+| AGradecouldonlybe              | IDENT                | 19              |
+| "Very Good"                    | STR_LIT              | 19              |
+| ,                              | DEL_ITEMS            | 19              |
+| "Good"                         | STR_LIT              | 19              |
+| ,                              | DEL_ITEMS            | 19              |
+| "Average"                      | STR_LIT              | 19              |
+| ,                              | DEL_ITEMS            | 19              |
+| "Pass"                         | STR_LIT              | 19              |
+| ,                              | DEL_ITEMS            | 19              |
+| "Fail"                         | STR_LIT              | 19              |
+| AGendercouldonlybe             | IDENT                | 20              |
+| "Female"                       | STR_LIT              | 20              |
+| ,                              | DEL_ITEMS            | 20              |
+| "Male"                         | STR_LIT              | 20              |
+| LetScore                       | IDENT                | 22              |
+| :                              | DEL_DT               | 22              |
+| Mathbe101                      | IDENT                | 22              |
+| ShowMath                       | IDENT                | 23              |
 | Math                           | IDENT                | 24              |
-| be                             | DT_KW                | 24              |
-| 101                            | INT_LIT              | 25              |
-| Show                           | ACTION_KW            | 25              |
-| Math                           | IDENT                | 26              |
 |_________________________________________________________________________|
-ADD_OP
-SUB_OP
-MUL_OP
-DIV_OP
-P_OP
-NOT_OP
-NOT_OP
-GRTR_OP
-LESS_OP
-GRTR_OP
-LESS_OP
-DIV_OP
-DIV_OP
-POINT_KW
-RELATE_KW
-NOISE_W
-IDENT
-IDENT
-IDENT
-DIV_OP
-MUL_OP
-POINT_KW
-RELATE_KW
-NOISE_W
-IDENT
-IDENT
-IDENT
-MUL_OP
-DIV_OP
-DEC_KW
-IDENT
-DEC_KW
-IDENT
-DEL_DT
-IDENT
-REM_KW
-SHORTEN_KW
-POINT_KW
-POINT_KW
-STR_LIT
-CHAR_LIT
-INT_LIT
-NOISE_W
-IDENT
-DT_KW
-DT_KW
-DT_KW
-PREP_KW
-INT_LIT
-PREP_KW
-INT_LIT
-NOISE_W
-IDENT
-DT_KW
-DT_KW
-DT_KW
-STR_LIT
-DEL_ITEMS
-STR_LIT
-DEL_ITEMS
-STR_LIT
-DEL_ITEMS
-STR_LIT
-DEL_ITEMS
-STR_LIT
-NOISE_W
-IDENT
-DT_KW
-DT_KW
-DT_KW
-STR_LIT
-DEL_ITEMS
-STR_LIT
-DEC_KW
-IDENT
-DEL_DT
-IDENT
-DT_KW
-INT_LIT
-ACTION_KW
-IDENT

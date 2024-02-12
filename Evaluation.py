@@ -1,4 +1,4 @@
-from Dictionaries import DIGITS, ALPHABETS, OPERATORS, RESERVEDORKEY_WORDS, NOISE_WORDS, SPECIAL_SYMBOLS
+from Dictionaries import DIGITS, ALPHABETS, OPERATORS, RESERVE_WORDS, NOISE_WORDS, SPECIAL_SYMBOLS
 
 def is_valid(lexeme):
     # Check if the word is not empty
@@ -25,8 +25,8 @@ def contains_num(input_str):
 
 
 def lexeme(token):
-    if token in RESERVEDORKEY_WORDS:
-        return RESERVEDORKEY_WORDS[token]
+    if token in RESERVE_WORDS:
+        return RESERVE_WORDS[token]
     elif token in NOISE_WORDS:
         return NOISE_WORDS[token]
     elif token in OPERATORS:

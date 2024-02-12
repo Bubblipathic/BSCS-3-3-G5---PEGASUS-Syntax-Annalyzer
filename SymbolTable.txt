@@ -1,38 +1,26 @@
 __________________________________________________________________________
 | Lexemes                        | Tokens               | Line Number     |
 |_________________________________________________________________________|
-| // This is a single line comment | SINGLE_COMM          | 2               |
-| /* This is a multi line comment */ | MULTI_COMM           | 8               |
-| Let                            | LET_KW               | 9               |
-| Grade                          | IDENT                | 10              |
-| LetGrade                       | IDENT                | 11              |
-| :                              | DEL_DT               | 11              |
-| Mon                            | IDENT                | 11              |
-| remembershortenitwas           | IDENT                | 12              |
-| "String asldk asdaksjdas"      | STR_LIT              | 14              |
-| 's'                            | CHAR_LIT             | 15              |
-| 1                              | INT_LIT              | 16              |
-| +                              | ADD_OP               | 16              |
-| 1                              | INT_LIT              | 16              |
-| AScorecouldonlybefrom1         | IDENT                | 18              |
-| to100                          | IDENT                | 18              |
-| AGradecouldonlybe              | IDENT                | 19              |
-| "Very Good"                    | STR_LIT              | 19              |
-| ,                              | DEL_ITEMS            | 19              |
-| "Good"                         | STR_LIT              | 19              |
-| ,                              | DEL_ITEMS            | 19              |
-| "Average"                      | STR_LIT              | 19              |
-| ,                              | DEL_ITEMS            | 19              |
-| "Pass"                         | STR_LIT              | 19              |
-| ,                              | DEL_ITEMS            | 19              |
-| "Fail"                         | STR_LIT              | 19              |
-| AGendercouldonlybe             | IDENT                | 20              |
-| "Female"                       | STR_LIT              | 20              |
-| ,                              | DEL_ITEMS            | 20              |
-| "Male"                         | STR_LIT              | 20              |
-| LetScore                       | IDENT                | 22              |
-| :                              | DEL_DT               | 22              |
-| Mathbe101                      | IDENT                | 22              |
-| ShowMath                       | IDENT                | 23              |
-| Math                           | IDENT                | 24              |
+| // This is a single line comment | SINGLE_COMM          | 1               |
+| /* This is a multi line comment */ | MULTI_COMM           | 7               |
+| "String asldk asdaksjdas"      | STR_LIT              | 10              |
+| AScorecouldonlybefrom1         | IDENT                | 12              |
+| to100                          | IDENT                | 12              |
+| AGradecouldonlybe              | IDENT                | 13              |
+| "Very Good"                    | STR_LIT              | 13              |
+| ,                              | DEL_ITEMS            | 13              |
+| "Good"                         | STR_LIT              | 13              |
+| ,                              | DEL_ITEMS            | 13              |
+| "Average"                      | STR_LIT              | 13              |
+| ,                              | DEL_ITEMS            | 13              |
+| "Pass"                         | STR_LIT              | 13              |
+| ,                              | DEL_ITEMS            | 13              |
+| "Fail"                         | STR_LIT              | 13              |
+| AGendercouldonlybe             | IDENT                | 14              |
+| "Female"                       | STR_LIT              | 14              |
+| ,                              | DEL_ITEMS            | 14              |
+| "Male"                         | STR_LIT              | 14              |
+| LetScore                       | IDENT                | 16              |
+| :                              | DEL_DT               | 16              |
+| Mathbe101                      | IDENT                | 16              |
 |_________________________________________________________________________|

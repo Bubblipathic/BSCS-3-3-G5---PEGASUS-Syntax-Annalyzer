@@ -224,8 +224,7 @@ def show_symbol_table():
         symbol_table_window = tk.Toplevel(root)
         symbol_table_window.title("Symbol Table")
         symbol_table_window.geometry("800x400")
-        symbol_table_window.iconbitmap("icon.ico")
-        symbol_table_window.configure(bg="#F4C2C2")
+        symbol_table_window.configure(bg="#FFFFFF")
 
         scrollbar = tk.Scrollbar(symbol_table_window)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
@@ -245,10 +244,9 @@ def browse_file():
     file_path = filedialog.askopenfilename(title="Select a file", filetypes=[("Pegasus", "*.pgs")])
     if file_path:
         analyze_file(file_path)
-        messagebox.showinfo("Analysis Complete", "Lexical analysis completed successfully!")
 
     else:
-        messagebox.showwarning("Invalid File", "Please select a valid Dash file.")
+        messagebox.showwarning("Invalid File", "Please select a valid Pegasus file.")
 
 
 # Set Tkinter as GUI

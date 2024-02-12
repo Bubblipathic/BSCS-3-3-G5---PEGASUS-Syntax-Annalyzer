@@ -8,9 +8,11 @@
 
 **Section:** Group 5
 
+## RUN: Analyzer.py
+
 ## Note:
 
-Lexical can be shown through the UI
+Lexical can be shown through the UI,
 
 but the Syntax Analyzer is just in the terminal
 

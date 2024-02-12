@@ -255,7 +255,42 @@ class Parser():
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["LET_KW", "IDENT","DEL_DT", "IDENT","BE_KW"]) )
 
         #Relations Statement
-        self.grammarRuleList.append(  GrammarRule("DT_DEC", ["IDENT", "IDENT","STR_LIT", "IDENT","BE_KW"]) )
+        self.grammarRuleList.append(  GrammarRule("REL_STMT", ["IDENT", "REL_OF","STR_LIT", "REL_IS","STR_LIT"]) )
+        self.grammarRuleList.append(  GrammarRule("REL_STMT", ["IDENT", "REL_OF","STR_LIT"]))
+
+        #Conversion Statement
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "ADD_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "SUB_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "MUL_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "DIV_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "P_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "AND_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "OR_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "NOT_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "EQ_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "UNEQ_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "GRTR_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "LESS_OP", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "GRTR_EQ", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "LESS_EQ", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "POINT_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "ACTION_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "REM_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "SHORTEN_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "REP_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "CONDI_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "ADVERB_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "PREP_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "REL_OF", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "REL_IS", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "LET_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "COULD_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "ONLY_KW", "KW_CONV", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "BE_KW", "KW_CONV", "STR_LIT"]))
+
+        #Input
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "BE_KW", "KW_CONV", "STR_LIT"]))
+   
 
 
 

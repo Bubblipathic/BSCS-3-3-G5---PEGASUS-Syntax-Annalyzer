@@ -57,6 +57,8 @@ RESERVE_WORDS = {
     'if': 'CONDI_KW',
     'Else': 'CONDI_KW',
     'else': 'CONDI_KW',
+    'Then': 'CONDI_KW',
+    'then': 'CONDI_KW',
     'One': 'ADVERB_KW',
     'one': 'ADVERB_KW',
     'at': 'ADVERB_KW',
@@ -80,7 +82,9 @@ RESERVE_WORDS = {
     'Only': 'ONLY_KW',
     'only': 'ONLY_KW',
     'Be': 'BE_KW',
-    'be': 'BE_KW'
+    'be': 'BE_KW',
+    'Mean' : "KW_CONV",
+    'mean' : "KW_CONV"
 }
 
 NOISE_WORDS = {

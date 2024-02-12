@@ -9,7 +9,7 @@ comment */
 
 "String asldk asdaksjdas"
 
-A Score could only be from 1 to 100 
+A Score could only be 1,2,3,4,5
 A Grade could only be "Very Good", "Good", "Average", "Pass", "Fail"
 A Gender could only be "Female", "Male"
 

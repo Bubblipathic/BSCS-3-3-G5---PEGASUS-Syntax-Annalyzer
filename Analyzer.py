@@ -251,19 +251,19 @@ def browse_file():
 
 # Set Tkinter as GUI
 root = tk.Tk()
-root.title("Pegasus Lexical Analyzer")
+root.title("Pegasus Lexical and Syntax Analyzer")
 root.geometry("600x300")
 #root.iconbitmap("icon.ico")
 
 
 # Set font and background color
-title_style = tk.font.Font(family="Ariel", size=25)
+title_style = tk.font.Font(family="Cooper Black", size=30)
 subtitle_style = tk.font.Font(family="Ariel", size=14)
 root.configure(bg="#FFFFFF")  
 
 # Set Label
 title_label = tk.Label(root, text="PEGASUS", font=title_style, bg="#FFFFFF")
-subtitle_label = tk.Label(root, text="Lexical Analyzer", font=subtitle_style, bg="#FFFFFF")
+subtitle_label = tk.Label(root, text="Lexical and Syntax Analyzer", font=subtitle_style, bg="#FFFFFF")
 title_label.pack(pady=10, expand=True, fill="both")
 subtitle_label.pack(pady=8, expand=True, fill="both")
 

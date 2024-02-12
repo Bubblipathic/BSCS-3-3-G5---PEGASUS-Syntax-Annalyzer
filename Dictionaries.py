@@ -41,8 +41,8 @@ RESERVE_WORDS = {
     'Close': 'ACTION_KW',
     'Spell': 'ACTION_KW',
     'spell': 'ACTION_KW',
-    'Ask': 'ACTION_KW',
-    'ask': 'ACTION_KW',
+    'Ask': 'INPUT_KW',
+    'ask': 'INPUT_KW',
     'Count': 'ACTION_KW',
     'count': 'ACTION_KW',
     'Change': 'ACTION_KW',
@@ -84,7 +84,10 @@ RESERVE_WORDS = {
     'Be': 'BE_KW',
     'be': 'BE_KW',
     'Mean' : "KW_CONV",
-    'mean' : "KW_CONV"
+    'mean' : "KW_CONV",
+    'For' : "FOR_KW",
+    'fr' : "FOR_KW"
+
 }
 
 NOISE_WORDS = {

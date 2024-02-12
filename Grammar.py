@@ -15,7 +15,8 @@ class Parser():
     def __init__(self):
         self.grammarRuleList = [];        
 
-        self.grammarRuleList.append(  GrammarRule("MUL_COMMENT", ["IDENT", "IDENT","STR_LIT", "IDENT","BE_KW"]) )
+        self.grammarRuleList.append(  GrammarRule("MULT_COMMENT", ["MULTI_COMM"]) )
+        self.grammarRuleList.append(  GrammarRule("SNGL_COMMENT", ["SINGLE_COMM"]) )
 
         #BASE ARITH
         self.grammarRuleList.append(  GrammarRule("ARITH_EXP", ["IDENT", "ADD_OP","IDENT"]) )
@@ -234,6 +235,7 @@ class Parser():
         self.grammarRuleList.append(  GrammarRule("REC_INT_LITS", ["DEL_ITEMS","FL_LIT"]) )
         self.grammarRuleList.append(  GrammarRule("REC_INT_LITS", ["DEL_ITEMS","INT_LIT"]) )
         self.grammarRuleList.append(  GrammarRule("REC_INT_LITS", ["DEL_ITEMS","STR_LIT"]) )
+        self.grammarRuleList.append(  GrammarRule("REC_INT_LITS", ["DEL_ITEMS","CHAR_LIT"]) )
 
         #Data Type Dec
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["IDENT", "COULD_KW","ONLY_KW", "BE_KW", "INT_LIT"]) )
@@ -242,6 +244,8 @@ class Parser():
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["IDENT", "COULD_KW","ONLY_KW", "BE_KW", "STR_LIT","DEL_ITEMS","STR_LIT"]) )
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["IDENT", "COULD_KW","ONLY_KW", "BE_KW", "FL_LIT"]) )
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["IDENT", "COULD_KW","ONLY_KW", "BE_KW", "FL_LIT","DEL_ITEMS","FL_LIT"]) )
+        self.grammarRuleList.append(  GrammarRule("DT_DEC", ["IDENT", "COULD_KW","ONLY_KW", "BE_KW", "CHAR_LIT"]) )
+        self.grammarRuleList.append(  GrammarRule("DT_DEC", ["IDENT", "COULD_KW","ONLY_KW", "BE_KW", "CHAR_LIT","DEL_ITEMS","CHAR_LIT"]) )
 
         #Variable Dec
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["LET_KW", "IDENT","DEL_DT", "IDENT"]) )
@@ -251,6 +255,8 @@ class Parser():
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["LET_KW", "IDENT","DEL_DT", "IDENT","BE_KW", "STR_LIT","DEL_ITEMS","STR_LIT"]) )
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["LET_KW", "IDENT","DEL_DT", "IDENT","BE_KW", "FL_LIT"]) )
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["LET_KW", "IDENT","DEL_DT", "IDENT","BE_KW", "FL_LIT","DEL_ITEMS","FL_LIT"]) )
+        self.grammarRuleList.append(  GrammarRule("DT_DEC", ["LET_KW", "IDENT","DEL_DT", "IDENT","BE_KW", "CHAR_LIT"]) )
+        self.grammarRuleList.append(  GrammarRule("DT_DEC", ["LET_KW", "IDENT","DEL_DT", "IDENT","BE_KW", "CHAR_LIT","DEL_ITEMS","CHAR_LIT"]) )
 
         self.grammarRuleList.append(  GrammarRule("DT_DEC", ["LET_KW", "IDENT","DEL_DT", "IDENT","BE_KW"]) )
 
@@ -287,22 +293,20 @@ class Parser():
         self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "COULD_KW", "KW_CONV", "STR_LIT"]))
         self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "ONLY_KW", "KW_CONV", "STR_LIT"]))
         self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "BE_KW", "KW_CONV", "STR_LIT"]))
-
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "FOR_KW", "KW_CONV", "STR_LIT"]))
+        
         #Input
-        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["LET_KW", "BE_KW", "KW_CONV", "STR_LIT"]))
-   
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["INPUT_KW", "FOR_KW", "IDENT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["INPUT_KW", "FOR_KW", "POINT_KW"]))
 
+        #Output
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["ACTION_KW", "IDENT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["ACTION_KW", "STR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["ACTION_KW", "INT_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["ACTION_KW", "FLT_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["ACTION_KW", "CHAR_LIT"]))
+        self.grammarRuleList.append(  GrammarRule("CONV_STMT", ["ACTION_KW", "POINT_KW"]))
 
-
-
-
-       
-
-        
-        
-   
-      
-        
         self.expressionList = []
         
     

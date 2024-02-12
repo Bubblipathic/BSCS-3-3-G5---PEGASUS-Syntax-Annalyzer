@@ -13,7 +13,7 @@ def analyze_file(file_path):
         line_number = 0  # Initialize line number
         
         # Read the chosen file
-        with open(file_path, 'r') as content:
+        with open(file_path, 'r',encoding='utf-8') as content:
             # Create Symbol Table
             with open("SymbolTable.txt", 'w') as output:
                 output.write("__________________________________________________________________________\n")
@@ -33,6 +33,9 @@ def analyze_file(file_path):
                                 tempstring += char
                             elif "'" in tempstring:
                                 tempstring += char
+                            elif tempstring in RESERVE_WORDS or NOISE_WORDS:
+                                lexemes.append((tempstring, line_number))  # Append lexeme with line number
+                                tempstring = ''
                             elif tempstring == '':
                                 continue
                         elif char.isalpha():

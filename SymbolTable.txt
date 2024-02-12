@@ -1,26 +1,39 @@
 __________________________________________________________________________
 | Lexemes                        | Tokens               | Line Number     |
 |_________________________________________________________________________|
-| // This is a single line comment | SINGLE_COMM          | 1               |
-| /* This is a multi line comment */ | MULTI_COMM           | 7               |
-| "String asldk asdaksjdas"      | STR_LIT              | 10              |
-| AScorecouldonlybefrom1         | IDENT                | 12              |
-| to100                          | IDENT                | 12              |
-| AGradecouldonlybe              | IDENT                | 13              |
-| "Very Good"                    | STR_LIT              | 13              |
-| ,                              | DEL_ITEMS            | 13              |
-| "Good"                         | STR_LIT              | 13              |
-| ,                              | DEL_ITEMS            | 13              |
-| "Average"                      | STR_LIT              | 13              |
-| ,                              | DEL_ITEMS            | 13              |
-| "Pass"                         | STR_LIT              | 13              |
-| ,                              | DEL_ITEMS            | 13              |
-| "Fail"                         | STR_LIT              | 13              |
-| AGendercouldonlybe             | IDENT                | 14              |
-| "Female"                       | STR_LIT              | 14              |
-| ,                              | DEL_ITEMS            | 14              |
-| "Male"                         | STR_LIT              | 14              |
-| LetScore                       | IDENT                | 16              |
-| :                              | DEL_DT               | 16              |
-| Mathbe101                      | IDENT                | 16              |
+| Odd                            | IDENT                | 1               |
+| could                          | COULD_KW             | 1               |
+| only                           | ONLY_KW              | 1               |
+| be                             | BE_KW                | 1               |
+| 1                              | INT_LIT              | 1               |
+| ,                              | DEL_ITEMS            | 1               |
+| 3                              | INT_LIT              | 1               |
+| ,                              | DEL_ITEMS            | 1               |
+| 5                              | INT_LIT              | 1               |
+| ,                              | DEL_ITEMS            | 1               |
+| 7                              | INT_LIT              | 1               |
+| ,                              | DEL_ITEMS            | 1               |
+| 9                              | INT_LIT              | 1               |
+| Let                            | LET_KW               | 2               |
+| Odd                            | IDENT                | 2               |
+| :                              | DEL_DT               | 2               |
+| x                              | IDENT                | 2               |
+| be                             | BE_KW                | 2               |
+| 3                              | INT_LIT              | 2               |
+| Ask                            | ACTION_KW            | 4               |
+| for                            | IDENT                | 4               |
+| y                              | IDENT                | 4               |
+| Show                           | ACTION_KW            | 6               |
+| Hello                          | IDENT                | 6               |
+| Parent                         | IDENT                | 7               |
+| of                             | REL_OF               | 7               |
+| "Bon"                          | STR_LIT              | 7               |
+| is                             | REL_IS               | 7               |
+| "Jay"                          | STR_LIT              | 7               |
+| Let                            | LET_KW               | 9               |
+| +                              | ADD_OP               | 9               |
+| mean                           | KW_CONV              | 9               |
+| add                            | IDENT                | 9               |
+| //this is a comment            | SINGLE_COMM          | 11              |
+| /* this is multiline */        | MULTI_COMM           | 14              |
 |_________________________________________________________________________|

@@ -2,9 +2,9 @@
 
 ## Pegasus
 
-**Submission Date:** Feb 13, 24
+**Submission Date:** February 13, 2024
 
-**Section:** BSCS 3-5
+**Section:** BSCS 3-3
 
 **Section:** Group 5
 

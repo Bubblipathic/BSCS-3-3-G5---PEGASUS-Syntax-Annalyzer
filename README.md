@@ -1,20 +1,33 @@
-# COSC 30063 - Principles of Programming Languages
+# PEGASUS  
+**Universal Programming Language, Made Easy**  
 
-## Title: Pegasus
+> *Say what you mean, in the simplest way possible.*  
 
-**Submission Date:** February 13, 2024
+---
 
-**Section:** BSCS 3-3
+## 📖 About
+PEGASUS is a toy programming language experiment that focuses on simplicity and readability.   
 
-**Section:** Group 5
+Instead of:
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println("Hello World!");
+}
+```
 
-## RUN: Analyzer.py
+You can just write:
 
-## Note:
+```java
+Show "Hello World!" one at a time, from 1 to 5
+```
 
-Lexical can be shown through the UI,
+---
 
-but the Syntax Analyzer is just in the terminal
+## 📝 Notes
+ - Input files must use the .pgs extension.
+ - The symbol table generated will be saved in SymbolTable.txt.
+ - This is a learning/project repo, not a production-ready language.
+
 
 
 
